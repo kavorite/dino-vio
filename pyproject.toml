@@ -6,7 +6,8 @@ readme = "README.md"
 requires-python = ">=3.11,<3.13"
 dependencies = [
     "cuda-python>=12.8.0",
-    "numpy>=2.2.4",
+    # "numpy>=2.2.4",
+    "numpy",
     "nvidia-cuda-runtime-cu12>=12.8.90",
     "nvidia-cuda-cupti-cu12>=12.8.90",
     # "nvidia-cusparselt-cu12>=0.7.1",
@@ -15,18 +16,23 @@ dependencies = [
     "pillow>=11.2.1",
     "pynvvideocodec>=1.0.2",
     "ruff>=0.11.6",
-    "torch>=2.6.0",
-    # "torchvision>=0.21.0",
+    # "torch>=2.6.0",
+    "torch",
+    "torchvision",
     "transformers>=4.51.3",
+    "einops>=0.8.1",
+    "geomloss>=0.2.6",
+    "sea-raft",
 ]
 
 [tool.uv.sources]
 torch = [
   { index = "pytorch" },
 ]
-# torchvision = [
-#   { index = "pytorch" }
-# ]
+torchvision = [
+  { index = "pytorch" }
+]
+sea-raft = { git = "https://github.com/kavorite/sea-raft" }
 
 [[tool.uv.index]]
 name = "pytorch"
